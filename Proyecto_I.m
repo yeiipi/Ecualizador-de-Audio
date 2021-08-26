@@ -12,6 +12,7 @@
 % las tareas indicadas en el enundciado del Proyecto
 
 %% Aquirir señal de audio
+clc;clear;
 
 recObj = audiorecorder; % Creando el objeto de audio
 
