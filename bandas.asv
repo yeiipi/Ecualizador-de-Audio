@@ -6,8 +6,8 @@ l_banda = floor(l/b);
 
 B = []';
 inicio = 1;
-for i=1:b*2
-    B = [B; frec(inicio:(inicio + l_banda-1))]; 
+for i=1:b
+    B = [B; frec(inicio:(inicio + l_banda))]; 
     inicio = inicio + l_banda;
 end 
 

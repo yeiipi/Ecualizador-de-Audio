@@ -27,7 +27,7 @@ disp('Termina la grabación.');
 x= getaudiodata(recObj); % Extrayendo los datos grabados del elemento de grabación
 x = x./max(x); % Normalización de la señal
 
-% Graficando la señal obtenida
+% Graficando la señal obtenida2
 n = length(x);
 t = (0:n-1)/fs; % Creando un vector de tiempo
 figure,
