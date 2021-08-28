@@ -1,4 +1,4 @@
-function [frec_filtradas] = windowsXP(frec, b, index, percentage, cost)
+function [frec_filtradas] = windowsXP(frec,b,index,percentage,cost)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INPUT:
@@ -15,13 +15,6 @@ function [frec_filtradas] = windowsXP(frec, b, index, percentage, cost)
 %   frec_filtradas -> banda de frecuencias transformadas con la ventana
 %                   seleccionada
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-frec_dims =  size(frec);
-
-if frec_dims(2) ~= 1
-    frec = frec';
-end
-    
 [B] = bandas(frec,b);
 
 sup = b + index;
