@@ -4,16 +4,13 @@ function [B] = bandas(frec,b)
 l = length(frec)/2;
 l_banda = floor(l/b);
 
-B = []';
+B = [];
 inicio = 1;
 for i=1:b*2
-    B = [B; frec(inicio:(inicio + l_banda-1))]; 
+    B = [B, frec(inicio:(inicio + l_banda-1))]; 
     inicio = inicio + l_banda;
 end 
 
-disp("og len vs new len")
-disp(length(frec))
-disp(length(reshape(B',1,[])))
     
 end
 
