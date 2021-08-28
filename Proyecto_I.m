@@ -56,7 +56,7 @@ grid on
 
 
 
-% Grafica de la magnitud de la transformada de Fourier
+% Grafica de la Fase de la transformada de Fourier
 subplot(212)
 plot(f,angle(Fxs))
 xlabel('Frecuencia [Hz]')

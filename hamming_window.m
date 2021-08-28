@@ -18,12 +18,5 @@ for i=1:b*2
 end
 
 frec_filtradas = reshape(B',1,[])
-
-
-
-
-
-
-
 end
 
