@@ -2,19 +2,19 @@ function [frec_filtradas] = windowsVista(coefs, b, index,cost)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INPUT:
-%   coefs      -> Vector del espectro de la transformada de fourier
+%   coefs      -> Vector de la transformada de fourier
 %   b          -> Numero de bandas 
 %   index      -> Banda actual a la que se le va a aplicar la ventana
 %   cost       -> factor de amplificación de la ventana a aplicar
 %
 % OUTPUT:
 %   frec_filtradas -> banda de frecuencias transformadas con la ventana
-%                   seleccionada
+%                   seleccionada (vector fila)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-frec_dims =  size(coefs);
+coef_dims =  size(coefs);
 
-if frec_dims(2) ~= 1
+if coef_dims(2) ~= 1
     coefs = coefs';
 end
     
@@ -23,8 +23,9 @@ end
 sup = b + index;
 inf = b - index+1;
 
-B(:,sup) = cost*(B(:,sup) .* triang(length(B(:,sup))) );
 B(:,inf) = cost*(B(:,inf) .* triang(length(B(:,inf))) );
+B(:,sup) = cost*(B(:,sup) .* triang(length(B(:,sup))) );
+
 
 frec_filtradas = reshape(B,1,[]);
 end
